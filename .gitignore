@@ -27,3 +27,15 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+# Ignore Dependency Lock File
+.terraform.lock.hcl 
+
+# Ignore all of the generated kube config files
+kubeconfig*
+
+# ignore .DS_Store
+.DS_Store
+
+# ignore user modified terraform.tfvars
+terraform.tfvars
