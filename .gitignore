@@ -1,6 +1,9 @@
 # Local .terraform directories
 **/.terraform/*
 
+# macOS
+.DS_Store
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -13,6 +16,12 @@ crash.log
 # version control.
 #
 # example.tfvars
+
+# ignore user modified terraform.tfvars
+terraform.tfvars
+
+# ignore lock file
+.terraform.lock.hcl
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -28,14 +37,8 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
-# Ignore Dependency Lock File
-.terraform.lock.hcl 
-
-# Ignore all of the generated kube config files
-kubeconfig*
-
-# ignore .DS_Store
-.DS_Store
-
-# ignore user modified terraform.tfvars
-terraform.tfvars
+# ingore senstitive files that are generated after terraform apply
+kube_config_server.yaml
+kube_config_workload.yaml
+id_rsa
+id_rsa.pub

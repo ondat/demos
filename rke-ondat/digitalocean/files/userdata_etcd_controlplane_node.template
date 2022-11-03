@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+export DEBIAN_FRONTEND=noninteractive
+
+# load required kernel modules
+sudo modprobe --verbose --all target_core_user target_core_mod tcm_loop configfs uio
+
+# register as a control plane node
+${register_command} --etcd --controlplane
